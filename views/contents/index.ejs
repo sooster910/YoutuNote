@@ -1,0 +1,32 @@
+<%include ../partials/header%>
+
+
+<div class="container">
+<header class="jumbotron">
+    <div class="container">
+    <h1>Welcome To YoutuNote!</h1>
+    <p>Start to study with youtube video and our app.</p>
+    <p>Manage your videos</p>
+    <a class="btn btn-primary btn-large" href ="/content/new">Add New Video</a>
+    </div>    
+</header>
+
+<div class="row text-center" style="display:flex; flex-wrap:wrap;">
+    
+    <% content.forEach(function(content){ %>
+    <div class="col-md-4 col-sm-6" >
+        <div class="card-deck">
+            <div class="card">
+                    <img class="card-image-top img-thumbnail" src="" />
+                    <iframe  src="<%= content.image%>" allowfullscreen></iframe> 
+                    <h5 class="card-title"><%= content.name %></h5>
+                    <p><a href="/content/<%=content._id%>" class="btn btn-primary">Taking a note</a></p>
+                </div>
+              
+    </div>
+    </div>    
+<%});%>
+</div>
+
+
+<%include ../partials/footer%>

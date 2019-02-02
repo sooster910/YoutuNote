@@ -1,0 +1,91 @@
+
+
+<%include ../partials/header%>
+<div class="container-fluid">
+<div class="row">
+  
+    <div class="col-lg-7">
+        <div class="card">
+
+                
+                <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="<%=content.image%>" allowfullscreen></iframe>
+                      </div>
+                <div class = "card-body ">
+           
+            <h5 class="card-title float-right"></h4>
+                
+            <h3 class="card-title"><a><%= content.name%></a></h4>
+             
+            <p class="card-text"><%= content.description%></p>
+            <a class="btn btn-primary" href="/content/<%=content._id%>/">Edit</a> 
+        </div>
+        </div>
+    </div>
+    
+
+    <!-- Create the note editor container -->
+    <div class="col-lg-5">
+          
+        
+
+                   <form action = "/content/<%= content._id%>?_method=PUT" method = "POST">
+                    
+                            <textarea name="content[text]" id="mytextarea">
+                               
+                                <%= content.text%>
+                               
+                               
+                            </textarea>
+                          
+                    
+                      <button class="btn btn-primary" type="submit">Update</button>
+                       <a class="btn btn-primary" href="/content/<%=content._id%>">Edit</a>        
+                   
+                    </form>
+
+                </div>
+
+                <!--show after save note -->
+                
+                   
+                    
+              
+
+                
+       
+        
+    <!--comment section-->
+
+         <div class="card bg-light card-body mt-3">
+             <div class="text-right">
+                    <a class ="btn btn-success" href="/content/<%=content._id%>/comments/new">
+                        Add New Comment
+                    </a>
+             </div>
+           
+            </div>
+         </div>
+
+
+</div>
+
+
+
+<!-- Initialize TinyMCE editor -->
+<script>
+        tinymce.init({
+          selector: '#mytextarea',
+          plugins: "autosave",
+            toolbar: "restoredraft"
+        });
+</script>
+  
+
+
+
+
+
+
+
+<%include ../partials/footer%> 
