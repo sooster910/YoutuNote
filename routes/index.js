@@ -9,7 +9,7 @@ var Content = require("../models/contents");
 router.get("/", function(req,res){
     console.log(req.user);
     //res.send("this will be the landing page soon!");
-    res.render("landing");
+    res.render("landing",{currentUser : req.user});
 
 });
 
@@ -26,7 +26,7 @@ router.get("/register", function(req,res){
     });
     
     router.post("/register", function(req,res){
-       //console.log(req.body.username);
+       console.log(req.body.username);
           var newUser= new User({username: req.body.username});
           User.register(newUser, req.body.password, function(err, user){
               if(err){
@@ -46,9 +46,11 @@ router.get("/register", function(req,res){
     res.render("login"); 
     
     });
+    
     router.post("/login", passport.authenticate("local",
-    {successRedirect:"/content",
+    {successRedirect:"/",
     failureRedirect:"/login"}),function(req,res){
+        
         //res.send("login logic happens");
 
 });
@@ -62,9 +64,13 @@ router.get("/register", function(req,res){
      
     
     
-    // router.use(function(req,res,next){
-    //     res.locals.currentUser
-    //     next();
-  //  });
+   //not letting a user add comment if the user is not logged in.
+function isLoggedIn(req,res, next){
+    if(req.isAuthenticated()){
+        return next();
+
+    }
+    res.redirect("/login");
+}
 
 module.exports=router;

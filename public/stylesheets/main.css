@@ -1,10 +1,15 @@
 
 #editor {
-   height :450px;
+   height :600px;
+   
   }
+
   
 .container{
     margin: 1%;
 
+  }
+  #delete-form{
+    display:inline;
   }
   

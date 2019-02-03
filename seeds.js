@@ -5,13 +5,19 @@ var data = [
     {   name:"javascript1",
         image:"https://www.youtube.com/embed/PkZNo7MFNFg",
         description: "this is test description", 
-        text : "you can start our own note "
+        text : "you can start our own note ",
+        userId : "588c2e092403d111454fff76",
+        
+        
     },
     {
         name: "javascript2",
         image: "https://www.youtube.com/embed/IEf1KAcK6A8",
         description: "test",
-        text : "you can start our own note "
+        text : "you can start our own note ",
+        userId : "588c2e092403d111454fff77",
+            
+        
     }
 ]
 
@@ -29,7 +35,7 @@ data.forEach(function(seed){
           if(err){
             console.log(err);
             }else{
-                    User
+                    
                     console.log("added a content");
                     content.save();
                        }
@@ -37,20 +43,10 @@ data.forEach(function(seed){
                 });  
             }
         });
-                    // Comment.create(
-          }      //     {
-                    //     text:"this place is great",
-                    //     author : "sue"
-                    // }, function(err, comments){
-                    //     if(err){
-                    //         console.log(err);
-                    //     }else{
-                    //     campground.comments.push(comments);
-                    //     campground.save();
-                    //     console.log("created new comment");
-                    //    //console.log(campground);
-                    // }
-                    // });
+                
+          }      
+                 
+                    
              
 //seedDB same as var seedDB
 module.exports =seedDB;

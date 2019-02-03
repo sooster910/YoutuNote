@@ -6,7 +6,12 @@ var contentSchema = new mongoose.Schema({
     image:String,
     description:String,
 
-    text: String
+    text: String,
+    userId:{
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"User"
+        }
+    
 
     
 

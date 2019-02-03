@@ -18,7 +18,11 @@
             <h3 class="card-title"><a><%= content.name%></a></h4>
              
             <p class="card-text"><%= content.description%></p>
-            <a class="btn btn-primary" href="/content/<%=content._id%>/">Edit</a> 
+            <a class="btn btn-warning" href="/content/<%=content._id%>/info-edit">Edit Info</a> 
+        
+              <form id="delete-form" action ="/content/<%=content._id%>?_method=Delete" method="POST">
+                <button class="btn btn-danger">Delete</button> 
+            </form>  
         </div>
         </div>
     </div>
@@ -29,9 +33,9 @@
           
         
 
-                   <form action = "/content/<%= content._id%>?_method=PUT" method = "POST">
+                   <form action = "/content/<%= content._id%>/?_method=PUT" method = "POST">
                     
-                            <textarea name="content[text]" id="mytextarea">
+                            <textarea name="content[text]" id="myTextarea">
                                
                                 <%= content.text%>
                                
@@ -39,14 +43,14 @@
                             </textarea>
                           
                     
-                      <button class="btn btn-primary" type="submit">Update</button>
-                       <a class="btn btn-primary" href="/content/<%=content._id%>">Edit</a>        
+                      <button class="btn btn-primary mt-3" type="submit">Update</button>
+                            
                    
                     </form>
 
                 </div>
 
-                <!--show after save note -->
+          
                 
                    
                     
@@ -55,16 +59,7 @@
                 
        
         
-    <!--comment section-->
-
-         <div class="card bg-light card-body mt-3">
-             <div class="text-right">
-                    <a class ="btn btn-success" href="/content/<%=content._id%>/comments/new">
-                        Add New Comment
-                    </a>
-             </div>
-           
-            </div>
+   
          </div>
 
 
@@ -73,12 +68,28 @@
 
 
 <!-- Initialize TinyMCE editor -->
-<script>
-        tinymce.init({
-          selector: '#mytextarea',
-          plugins: "autosave",
-            toolbar: "restoredraft"
-        });
+<script type="text/javascript">
+        
+    tinymce.init({
+    selector: '#myTextarea',
+    theme: 'modern',
+    width: 700,
+    height: 570,
+    plugins: [
+      'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
+      'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+      'save table contextmenu directionality emoticons template paste textcolor'
+    ],
+    content_css: 'css/content.css',
+    toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons'
+  });
+        
+        
+        // tinymce.init({
+        // selector: '#mytextarea',
+        // plugins: "autosave",
+        // toolbar: "restoredraft"
+        // });
 </script>
   
 

@@ -2,18 +2,17 @@
 
 
 <div class="container">
-<header class="jumbotron">
-    <div class="container">
-    <h1>Welcome To YoutuNote!</h1>
-    <p>Start to study with youtube video and our app.</p>
-    <p>Manage your videos</p>
-    <a class="btn btn-primary btn-large" href ="/content/new">Add New Video</a>
-    </div>    
-</header>
 
-<div class="row text-center" style="display:flex; flex-wrap:wrap;">
-    
-    <% content.forEach(function(content){ %>
+<div class="jumbotron">
+    <h1 class="display-4">Hello,<%=currentUser.username%> Welcome To YoutuNote! </h1>
+    <p class="lead">Start to study with youtube video and our app.</p>
+    <hr class="my-4">
+    <p>Create your YoutuNote, take a note and save it!</p>
+    <a class="btn btn-primary btn-lg" href="/content/new">Add New Video</a>
+  </div>
+
+  <div class="row text-center" style="display:flex; flex-wrap:wrap;">
+      <% content.forEach(function(content){ %>
     <div class="col-md-4 col-sm-6" >
         <div class="card-deck">
             <div class="card">
@@ -28,5 +27,5 @@
 <%});%>
 </div>
 
-
+</div>
 <%include ../partials/footer%>
