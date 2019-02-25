@@ -1,5 +1,8 @@
-<h3>YoutuNote is an web application woud be a solution for students to face the inconvenient moments that they take a note separately such as using Evernote while they study through the Youtube.
-<h3>
+YoutuNote is an web application that woud be a solution for students to face the inconvenient moments that they take a note separately such as using Evernote while they study through the Youtube.
+
+User can use TinyMCE rich text editor while they watching Youtube video through using this web.
+
+
 
 #RESTful Route
 
@@ -47,7 +50,7 @@
 
    <tr>
     <td>Update</td>
-    <td>/content/:id/info-edit</td>
+    <td>/content/:id/</td>
     <td>PUT</td>
     <td>Update the particular video info</td>
    </tr>
@@ -72,3 +75,5 @@
 
 *Install and configure connect -flash
 *Add bootstrap alert to header 
+
+# Adding draggable function to note and video. 

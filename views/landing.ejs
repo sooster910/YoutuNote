@@ -1,15 +1,25 @@
 <%include ./partials/header%>
 
-<h1>Landing Page!</h1>
-<%if(!currentUser){%>
-<h4>Hi! Please login or Sing up </h4>
-<p>Welcome to YutuNote</p>
 
-<%}else{%>
-    <h4>Hi! <%=currentUser.username%>,</h4>
-<p>Welcome to YutuNote</p>
+    
+<div id="landing-header">
+<h1>Hi! 
+<%if(currentUser){%>
+<%=currentUser.username%>, 
 <%}%>
+</h1>
+<h1>Welcome to YutuNote</h1>
+<a href="/content" class="btn btn-black btn-lg mt-2">View All your Video + Note </a>
+</div>
+<ul class="slideshow">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
 
-<a href ="/content">View All your Video </a>
+
+
 
 <%include ./partials/footer%>

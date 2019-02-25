@@ -1,13 +1,13 @@
 
 
 <%include ../partials/header%>
-<div class="container-fluid">
-<div class="row">
+<div class="container-fluid"> 
+<!-- <div class="row"> -->
   
-    <div class="col-lg-7">
-        <div class="card">
-
-                
+    <!-- <div class="col-lg-7"> -->
+        
+       
+        <div class="card w-50 ui-widget-content" id ="resizemove">
                 <div class="embed-responsive embed-responsive-16by9">
                         <iframe class="embed-responsive-item" src="<%=content.image%>" allowfullscreen></iframe>
                       </div>
@@ -25,45 +25,32 @@
             </form>  
         </div>
         </div>
-    </div>
+      
+        <!-- </div> -->
+    <!-- </div> -->
     
 
     <!-- Create the note editor container -->
-    <div class="col-lg-5">
-          
-        
-
-                   <form action = "/content/<%= content._id%>/?_method=PUT" method = "POST">
-                    
+    <!-- <div class="col-lg-5"> -->    
+            <form action = "/content/<%= content._id%>/?_method=PUT" method = "POST">
+                <div id = "note"> 
                             <textarea name="content[text]" id="myTextarea">
                                
                                 <%= content.text%>
                                
-                               
+                           
                             </textarea>
-                          
+                        
                     
                       <button class="btn btn-primary mt-3" type="submit">Update</button>
                             
-                   
+                        </div> 
                     </form>
-
-                </div>
-
-          
-                
-                   
-                    
-              
-
-                
-       
-        
    
-         </div>
+         </div> 
 
 
-</div>
+<!-- </div> -->
 
 
 
@@ -73,6 +60,8 @@
     tinymce.init({
     selector: '#myTextarea',
     theme: 'modern',
+    resize:'both',
+    statusbar: true,
     width: 700,
     height: 570,
     plugins: [
@@ -83,13 +72,22 @@
     content_css: 'css/content.css',
     toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons'
   });
-        
-        
-        // tinymce.init({
-        // selector: '#mytextarea',
-        // plugins: "autosave",
-        // toolbar: "restoredraft"
-        // });
+     
+
+$('#resizemove')
+    .draggable()
+    .resizable();
+
+// $('#note').draggable({
+//     cancel: "myTextarea",
+//     start: function (){
+//         $('#myTextarea').focus();
+//     },
+//     stop: function (){
+//         $('#myTextarea').focus();
+//     } 
+// });
+$('#note').draggable();
 </script>
   
 
