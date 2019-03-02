@@ -24,7 +24,8 @@ var ContentRoutes = require("./routes/contents"),
 
 
 //connect mongoose
-mongoose.connect("mongodb://localhost/youtuNote", { useNewUrlParser: true });
+//mongoose.connect("mongodb://localhost/youtuNote", { useNewUrlParser: true });
+mongoose.connect("mongodb+srv://suya9880:Suya2548118@cluster0-i2lfo.mongodb.net/youtuNote", { useNewUrlParser: true });
 
 
 app.use(bodyparser.urlencoded({ extended: true }));
