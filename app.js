@@ -1,6 +1,7 @@
 //import
 var express = require("express"),
     app = express(),
+    PORT=process.env.PORT,
     bodyparser = require("body-parser"),
     mongoose = require("mongoose"),
     flash = require("connect-flash"),
@@ -11,8 +12,8 @@ var express = require("express"),
     seedDB = require("./seeds"),
     Content = require("./models/contents")
 
-var server = app.listen(3000, function () {
-    console.log("Yelp SERVER has started");
+var server = app.listen(PORT, function () {
+    console.log("YoutuNote SERVER has started");
 });
 
 seedDB();
