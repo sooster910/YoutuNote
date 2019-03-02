@@ -10,21 +10,24 @@
 
 
     <!--bootstrap-->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-        crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
     <!--TinyMCE Rich Text Editor-->
     <script type="text/javascript" src='https://cloud.tinymce.com/stable/tinymce.min.js'></script>
+    
     <link rel="stylesheet" type="text/css" href="/stylesheets/landing.css" />
-
     <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
-   <!--google font-->
-   <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+    <!--google font-->
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
     <!--jquery-->
     <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -33,10 +36,10 @@
 </head>
 
 <body>
-
+    <section id ="header">
     <!-- navbar-->
     <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="/landing"> YoutuNote</a>
+        <a class="navbar-brand" href="/content"> YoutuNote</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,21 +57,21 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/login">Login</a>
                 </li>
-            <%}else{%>
+                <%}else{%>
                 <li class="nav-item">
                     <a class="nav-link" href="/logout">Logout</a>
                 </li>
-            <%}%>        
+                <%}%>        
             </ul>
         </div>
 
     </nav>
     
     <!--diaplay message-->
-  
         <%if(success && success.length>0){%>
-        <div class="alert alert-success" role="alert">
-            <%=success%>
+                <div class="alert alert-success" role="alert">
+                    <%=success%>
+                </div>
+                <% }%>
         </div>
-        <% }%>
-    </div>
+    </section>

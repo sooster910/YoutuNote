@@ -1,66 +1,55 @@
-
-
 <%include ../partials/header%>
-<div class="container-fluid"> 
-<!-- <div class="row"> -->
-  
-    <!-- <div class="col-lg-7"> -->
-        
-       
-        <div class="card w-50 ui-widget-content" id ="resizemove">
-                <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="<%=content.image%>" allowfullscreen></iframe>
-                      </div>
-                <div class = "card-body ">
-           
-            <h5 class="card-title float-right"></h4>
-                
-            <h3 class="card-title"><a><%= content.name%></a></h4>
-             
-            <p class="card-text"><%= content.description%></p>
-            <a class="btn btn-warning" href="/content/<%=content._id%>/info-edit">Edit Info</a> 
-        
-              <form id="delete-form" action ="/content/<%=content._id%>?_method=Delete" method="POST">
-                <button class="btn btn-danger">Delete</button> 
-            </form>  
-        </div>
-        </div>
-      
-        <!-- </div> -->
-    <!-- </div> -->
-    
 
-    <!-- Create the note editor container -->
-    <!-- <div class="col-lg-5"> -->    
-            <form action = "/content/<%= content._id%>/?_method=PUT" method = "POST">
-                <div id = "note"> 
-                            <textarea name="content[text]" id="myTextarea">
-                               
-                                <%= content.text%>
-                               
-                           
-                            </textarea>
-                        
-                    
-                      <button class="btn btn-primary mt-3" type="submit">Update</button>
-                            
-                        </div> 
-                    </form>
-   
-         </div> 
+<div class="container-fluid" style="display:inline-flex">
 
+  <div>
+    <div class="card ui-widget-content mr-3" id="resizemove">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="<%=content.image%>" allowfullscreen></iframe>
+      </div>
+      <div class="card-body ">
 
-<!-- </div> -->
+        <h5 class="card-title float-right"></h5>
 
+        <h3 class="card-title"><a><%= content.name%></a></h3>
+
+        <p class="card-text"><%= content.description%></p>
+        <a class="btn btn-warning" href="/content/<%=content._id%>/info-edit">Edit Info</a>
+
+        <form id="delete-form" action="/content/<%=content._id%>?_method=Delete" method="POST">
+          <button class="btn btn-danger">Delete</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <!--Note Editor -->
+  <div id="note">
+  <form action="/content/<%= content._id%>/?_method=PUT" method="POST">
+
+    <div>
+      <textarea name="content[text]" id="myTextarea">
+          <%= content.text%>                     
+      </textarea>
+
+      <div class="update_bar">
+        <button class="btn btn-primary mt-3" type="submit">Update</button>
+
+      </div>
+   </div>
+  </form>
+</div>
+</div>
 
 
 <!-- Initialize TinyMCE editor -->
 <script type="text/javascript">
-        
-    tinymce.init({
+
+  tinymce.init({
     selector: '#myTextarea',
     theme: 'modern',
-    resize:'both',
+    resize: 'both',
     statusbar: true,
     width: 700,
     height: 570,
@@ -72,24 +61,19 @@
     content_css: 'css/content.css',
     toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons'
   });
-     
 
-$('#resizemove')
+
+  $('#resizemove')
     .draggable()
-    .resizable();
+    .resizable({
+      minWidth: 560,
+      minHeight: 340
 
-// $('#note').draggable({
-//     cancel: "myTextarea",
-//     start: function (){
-//         $('#myTextarea').focus();
-//     },
-//     stop: function (){
-//         $('#myTextarea').focus();
-//     } 
-// });
-$('#note').draggable();
+    });
+
+
+  $('#note').draggable();
 </script>
-  
 
 
 
@@ -97,4 +81,5 @@ $('#note').draggable();
 
 
 
-<%include ../partials/footer%> 
+
+<%include ../partials/footer%>

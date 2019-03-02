@@ -4,14 +4,45 @@
    
   }
 .container{
-    margin: 1%;
-
+    
+    justify-content: center;
   }
   #delete-form{
     display:inline;
   }
+
+.jumbotron{
+  background-color: #F9F4F0;
+  color :black;
+
+}
+
+.btn-outline-secondary:hover{
+  background-color : #731416 !important;
+  color: #fff;
+}
+.btn-dark{
+
+  background-color:#731416;
+  
+}
+.btn-dark:hover{
+background-color: #F9F4F0!important;
+
+}
 #footer{
   text-align: center;
   margin-top: 20rem;
   margin-bottom: 1rem;
+}
+
+#resizemove{
+  width: 560px; 
+  height: 430px;
+ 
+}
+
+
+.update_bar{
+background-color:#EBEBEB;
 }

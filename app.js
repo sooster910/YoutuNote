@@ -51,7 +51,6 @@ app.use(function (req, res, next) {
     res.locals.success = req.flash("success");
     next();
 });
-//ROUTES CONFIGURATION always after app.use(bodyparser)
 
 app.use("/", indexRoutes);
 app.use("/content", ContentRoutes);

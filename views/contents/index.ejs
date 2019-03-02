@@ -1,16 +1,19 @@
 <%include ../partials/header%>
 
 
-<div class="container">
 
+<div class="container">
+    
 <div class="jumbotron">
+        
     <h1 class="display-4">Hello,<%=currentUser.username%> Welcome To YoutuNote! </h1>
     <p class="lead">Start to study with youtube video and our app.</p>
     <hr class="my-4">
     <p>Create your YoutuNote, take a note and save it!</p>
-    <a class="btn btn-primary btn-lg" href="/content/new">Add New Video</a>
-  </div>
+    <a class="btn btn-outline-secondary btn-lg" href="/content/new">Add New Video</a>
 
+    
+</div>
   <div class="row text-center" style="display:flex; flex-wrap:wrap;">
       <% content.forEach(function(content){ %>
     <div class="col-md-4 col-sm-6" >
@@ -19,13 +22,13 @@
                     <img class="card-image-top img-thumbnail" src="" />
                     <iframe  src="<%= content.image%>" allowfullscreen></iframe> 
                     <h5 class="card-title"><%= content.name %></h5>
-                    <p><a href="/content/<%=content._id%>" class="btn btn-primary">Taking a note</a></p>
+                    <p><a href="/content/<%=content._id%>" class="btn btn-dark">Taking a note</a></p>
                 </div>
-              
+        
     </div>
     </div>    
 <%});%>
 </div>
-
 </div>
+
 <%include ../partials/footer%>
