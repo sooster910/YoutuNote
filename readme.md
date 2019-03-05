@@ -1,6 +1,6 @@
 YoutuNote is an web application that woud be a solution for students to face the inconvenient moments that they take a note separately such as using Evernote while they study through the Youtube.
 
-User can use TinyMCE rich text editor while they watching Youtube video through using this web.
+User can use TinyMCE rich text editor while they watching Youtube video on the same page.
 
 
 
