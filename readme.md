@@ -4,7 +4,7 @@ User can use TinyMCE rich text editor while they watching Youtube video on the s
 
 
 
-#RESTful Route
+# RESTful Route
 
 <table>
   <tr>
@@ -66,12 +66,12 @@ User can use TinyMCE rich text editor while they watching Youtube video on the s
 </table>
 
 
-#Configure passport
-*Add Register, Login, Logout routes
-*Show/hide auth links in navbar
+# Configure passport
+* Add Register, Login, Logout routes
+* Show/hide auth links in navbar
 
 
-#Adding in Flash
+# Adding in Flash
 
 *Install and configure connect -flash
 *Add bootstrap alert to header 
